@@ -1,4 +1,4 @@
-MY_DIR = "/my-example-dir"
+MY_DIR = "/home/ec2-user/inbox"
 
 directory MY_DIR do
   action :create
@@ -9,5 +9,5 @@ template "secret message" do
   source "secret_message.erb"
   #owner "root"
   #group "root"
-  #variables( :ebs_directory_path => EBS_FILESYSTEM_DIRECTORY )
+  #variables( :member_name => "mike" )
 end

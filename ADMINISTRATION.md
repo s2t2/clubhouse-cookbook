@@ -1,9 +1,5 @@
 # Administration
 
-This document describes the process of launching the server in an admin role for others to use.
-
-## Instructions
-
 Obtain the private key associated with the server (e.g. "gwu-business-1.pem"). Note the server's Public IP address (e.g. 54.175.53.250).
 
 Log-in to the server:
@@ -11,22 +7,6 @@ Log-in to the server:
 ```` sh
 ssh -i ~/.ssh/gwu-business-1.pem ec2-user@54.175.53.250
 ````
-
-Configure and deploy the server: todo.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 ## Prerequisites
 
@@ -49,25 +29,18 @@ chmod 400 ~/.ssh/gwu-business-1.pem
 
 Navigate to the "OpsWorks" service.
 
-Create a new stack in the "N. Virginia" region using the "Amazon Linux" OS, and use the advanced options to "use custom chef cookbooks", and specify the cookbook url, "_____________".
+Create a new stack in the "N. Virginia" region using the "Amazon Linux" OS, and use the advanced options to "use custom chef cookbooks", and specify the cookbook url, "https://github.com/gwu-business/clubhouse".
 
-Add a new "Custom" layer.
+Add a new "Custom" layer and specify the recipe(s) to run during the "Deploy" lifecycle event: `clubhouse::build_it`.
 
-Add a new server instance to the stack. Choose t2.medium, 24/7, and select the previously-generated "gwu-business-1.pem" SSH key.
+Add a new server instance to the stack. Choose "m4.large" size, "24/7" scaling type, and select the previously-generated "gwu-business-1.pem" SSH key.
 
-Once the new instance has been created, click "start" and wait a few moments.
+Once the new instance has been created, click "start" and wait a few moments until the instance status changes from "booting" to "running".
+
+This will trigger a number of lifecycle events, including the "Deploy" event,
+ which should in turn trigger execution of custom cookbook recipe(s).
 
 Note the server's Public IP address (e.g. 54.175.53.250).
-
-
-
-
-
-
-
-
-
-
 
 ## Configuration
 
