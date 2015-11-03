@@ -10,9 +10,18 @@
  + http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom-enable.html
  + http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-installingcustom-repo.html
  + https://docs.chef.io/cookbook_repo.html#about-cookbook-metadata
+ + https://docs.chef.io/release/11-18/config_rb_metadata.html
  + https://github.com/aws/opsworks-cookbooks
  + https://github.com/awslabs/opsworks-example-cookbooks
+ + https://github.com/caskroom/homebrew-cask
  + https://github.com/chef/chef-dk
+ + https://github.com/caskroom/homebrew-cask
+ + https://github.com/mitchellh/vagrant-aws
  + https://github.com/s2t2/trailmix-solo
+ + https://github.com/test-kitchen/kitchen-ec2
+ + http://jasoncosper.com/vagrant-casked/
+ + http://kitchen.ci/docs/getting-started/creating-cookbook
  + http://pixelcog.com/blog/2014/virtualizing-aws-opsworks-with-vagrant/
+ + http://sourabhbajaj.com/mac-setup/Vagrant/README.html
+ + http://stackoverflow.com/a/32611943/670433
  + http://unix.stackexchange.com/a/115860/60712
