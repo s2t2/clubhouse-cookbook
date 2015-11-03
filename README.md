@@ -1,13 +1,14 @@
-# Club House
+# Club House OpsWorks Cookbook
 
-The Club House is a "cloud" computer which demonstrates concepts of
-  computer networks,
-  protocols,
-  hardware,
-  and software.
+This repository contains a [Chef](https://www.chef.io/chef/) cookbook of recipes
+ to configure, launch, and administer a server called the 'Club House'.
 
-In this case, the computer is an [Elastic Cloud Compute (EC2)](https://aws.amazon.com/ec2/)
- server hosted by [Amazon Web Services](https://aws.amazon.com/).
+The server is an [Elastic Cloud Compute (EC2)](https://aws.amazon.com/ec2/)
+ instance hosted by [Amazon Web Services](https://aws.amazon.com/)
+ and managed via [OpsWorks](https://aws.amazon.com/opsworks/).
+
+The server is used for instructional purposes to demonstrate concepts of
+ computer networks, protocols, hardware, software, and cloud computing.
 
 ## Features
 

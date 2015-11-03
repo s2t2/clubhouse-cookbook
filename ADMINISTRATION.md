@@ -47,7 +47,7 @@ chmod 400 ~/.ssh/gwu-business-1.pem
 
 ### Server Instance
 
-Navigate to the "Opsworks" service.
+Navigate to the "OpsWorks" service.
 
 Create a new stack in the "N. Virginia" region using the "Amazon Linux" OS, and use the advanced options to "use custom chef cookbooks", and specify the cookbook url, "_____________".
 
