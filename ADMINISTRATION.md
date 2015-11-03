@@ -1,0 +1,91 @@
+# Administration
+
+This document describes the process of launching the server in an admin role for others to use.
+
+## Instructions
+
+Obtain the private key associated with the server (e.g. "gwu-business-1.pem"). Note the server's Public IP address (e.g. 54.175.53.250).
+
+Log-in to the server:
+
+```` sh
+ssh -i ~/.ssh/gwu-business-1.pem ec2-user@54.175.53.250
+````
+
+Configure and deploy the server: todo.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Prerequisites
+
+Create an AWS account, log-in to the AWS console, and ensure presence of a running server.
+
+### Key Pair
+
+Navigate to the "Network and Security" > "Key Pairs" menu.
+
+Choose an existing key pair, or create a new key pair and witness it auto-download to your local machine (e.g. "gwu-business-1.pem").
+
+Move the file into the .ssh directory and change file permissions.
+
+```` sh
+mv ~/Downloads/gwu-business-1.pem ~/.ssh
+chmod 400 ~/.ssh/gwu-business-1.pem
+````
+
+### Server Instance
+
+Navigate to the "Opsworks" service.
+
+Create a new stack in the "N. Virginia" region using the "Amazon Linux" OS, and use the advanced options to "use custom chef cookbooks", and specify the cookbook url, "_____________".
+
+Add a new "Custom" layer.
+
+Add a new server instance to the stack. Choose t2.medium, 24/7, and select the previously-generated "gwu-business-1.pem" SSH key.
+
+Once the new instance has been created, click "start" and wait a few moments.
+
+Note the server's Public IP address (e.g. 54.175.53.250).
+
+
+
+
+
+
+
+
+
+
+
+## Configuration
+
+Optionally use a text editor to add an entry to the SSH configuration file
+ to specify the credentials to use when logging in to the server.
+
+```` sh
+atom ~/.ssh/config
+````
+
+    # ~/.ssh/config
+
+    Host 54.175.53.250
+    IdentityFile ~/.ssh/gwu-business-1.pem
+    User ec2-user
+
+This configuration allows server access via a more concise command:
+
+```` sh
+ssh 54.175.53.250
+````

@@ -24,3 +24,7 @@ In this case, the computer is an [Elastic Cloud Compute (EC2)](https://aws.amazo
 * Hosts a static html site (over HTTPS on port 80).
 
 * Hosts a static html site for each member (over HTTPS on port 80).
+
+## [Administration](ADMINISTRATION.md)
+
+## [Contributing](CONTRIBUTING.md)
