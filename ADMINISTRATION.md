@@ -8,6 +8,8 @@ Log-in to the server:
 ssh -i ~/.ssh/gwu-business-1.pem ec2-user@54.175.53.250
 ````
 
+To deploy or re-deploy, run the "Setup" command from the AWS "OpsWorks" > "Stack" menu.
+
 ## Prerequisites
 
 Create an AWS account, log-in to the AWS console, and ensure presence of a running server.
