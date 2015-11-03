@@ -8,7 +8,10 @@ Log-in to the server:
 ssh -i ~/.ssh/gwu-business-1.pem ec2-user@54.175.53.250
 ````
 
-To deploy or re-deploy, run the "Setup" command from the AWS "OpsWorks" > "Stack" menu.
+To deploy or re-deploy, run the "Setup" command from the AWS "Stack" > "Run Command" menu.
+
+If the cookbook changes, run the "Update Custom Cookbooks" command
+ before performing the next "Setup" command.
 
 ## Prerequisites
 
