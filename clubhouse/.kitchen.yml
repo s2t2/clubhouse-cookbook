@@ -12,4 +12,5 @@ platforms:
 suites:
   - name: default
     run_list:
-    attributes:
+      - recipe[clubhouse::build_it]
+    attributes: { foo: "bar" }

@@ -11,3 +11,5 @@ template "secret message" do
   #group "root"
   #variables( :member_name => "mike" )
 end
+
+log "HELLO WORLD"

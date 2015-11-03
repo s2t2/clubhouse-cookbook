@@ -7,8 +7,8 @@ Issues and Pull Requests are welcome.
 Clone the repository (requires git).
 
 ```` sh
-git clone git@github.com:gwu-business/club-house.git
-cd club-house/
+git clone git@github.com:gwu-business/clubhouse-cookbook.git
+cd clubhouse-cookbook/clubhouse
 ````
 
 ## Prerequisites
@@ -40,17 +40,22 @@ brew cask install virtualbox
 
 ## Testing
 
-Spin-up a virtual machine on which to test the server convergence process.
+Spin-up a virtual machine on which to test the convergence process.
 
 ```` sh
 kitchen create default-ubuntu-1404
 ````
 
-
-Run tests.
+Run tests (converge the node).
 
 ```` sh
-
+kitchen converge default-ubuntu-1404
 ````
 
-Edit existing features, or add new features, and add passing test for each.
+Optionally inspect the virtual machine over SSH using the Vagrant Manager, or:
+
+```` sh
+kitchen login default-ubuntu-1404
+````
+
+Edit existing features, or add new features, and add passing test(s) for each.
