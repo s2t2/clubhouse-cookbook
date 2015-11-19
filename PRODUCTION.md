@@ -1,6 +1,7 @@
 # Administration
 
-Obtain the private key associated with the server (e.g. "gwu-business-1.pem"). Note the server's Public IP address (e.g. 54.175.53.250).
+Obtain the private key associated with the production server (e.g. "gwu-business-1.pem").
+ Note the server's Public IP address (e.g. 54.175.53.250).
 
 Log-in to the server:
 
@@ -21,7 +22,9 @@ Create an AWS account, log-in to the AWS console, and ensure presence of a runni
 
 Navigate to the "Network and Security" > "Key Pairs" menu.
 
-Choose an existing key pair, or create a new key pair and witness it auto-download to your local machine (e.g. "gwu-business-1.pem").
+Choose an existing key pair,
+ or create a new key pair
+  and witness it auto-download to your local machine (e.g. "gwu-business-1.pem").
 
 Move the file into the .ssh directory and change file permissions.
 
@@ -34,13 +37,22 @@ chmod 400 ~/.ssh/gwu-business-1.pem
 
 Navigate to the "OpsWorks" service.
 
-Create a new stack in the "N. Virginia" region using the "Amazon Linux" OS, and use the advanced options to "use custom chef cookbooks", and specify the cookbook url, "https://github.com/gwu-business/clubhouse".
+Create a new stack in the "N. Virginia" region using the "Amazon Linux" OS,
+ and use the advanced options to "use custom chef cookbooks",
+ and specify the cookbook url, "https://github.com/gwu-business/clubhouse".
 
-Add a new "Custom" layer and specify the recipe(s) to run during the "Deploy" lifecycle event: `clubhouse::build_it`.
+Add a new "Custom" layer
+ and specify the recipe(s) to run
+ during the "Deploy" lifecycle event: `clubhouse::build_it`.
 
-Add a new server instance to the stack. Choose "m4.large" size, "24/7" scaling type, and select the previously-generated "gwu-business-1.pem" SSH key.
+Add a new server instance to the stack.
+ Choose "m4.large" size,
+  "24/7" scaling type,
+  and select the previously-generated "gwu-business-1.pem" SSH key.
 
-Once the new instance has been created, click "start" and wait a few moments until the instance status changes from "booting" to "running".
+Once the new instance has been created,
+ click "start"
+ and wait a few moments until the instance status changes from "booting" to "running".
 
 This will trigger a number of lifecycle events, including the "Deploy" event,
  which should in turn trigger execution of custom cookbook recipe(s).

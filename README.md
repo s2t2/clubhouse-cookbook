@@ -1,25 +1,35 @@
-# Club House OpsWorks Cookbook
+# Server Administration Application
 
-This repository contains a [Chef](https://www.chef.io/chef/) cookbook of recipes
- to configure, launch, and administer a server called the 'Club House'.
+As an Instructor,
+when demonstrating concepts of
+  computer networks, protocols, hardware, software, and cloud computing:
+use this server administration application to
+ automate server configuration and administration tasks.
 
-The server is an [Elastic Cloud Compute (EC2)](https://aws.amazon.com/ec2/)
- instance hosted by [Amazon Web Services](https://aws.amazon.com/)
- and managed via [OpsWorks](https://aws.amazon.com/opsworks/).
+This application can configure a remote server or a local virtual machine.
 
-The server is used for instructional purposes to demonstrate concepts of
- computer networks, protocols, hardware, software, and cloud computing.
+The intended remote production server is an [Elastic Cloud Compute (EC2)](https://aws.amazon.com/ec2/)
+  instance hosted by [Amazon Web Services](https://aws.amazon.com/)
+  and managed via [OpsWorks](https://aws.amazon.com/opsworks/).
 
-## Features
+To administer the production server,
+ follow the [production instructions](PRODUCTION.md).
 
- 1. Creates a home directory for each member, as represented by their GW `net_id`.
- * Creates in the home directory of each member a text file with unique content.
- * Sends an email to each member on a recurring basis (over SMTP).
- * Allows access by each member to his/her home directory (over SSH on port 22).
- * Allows shared database access for all members (over SSH on port 3306).
- * Hosts a static html site (over HTTPS on port 80).
- * Hosts a static html site for each member (over HTTPS on port 80).
+To contribute new features or bug fixes or documentation improvements,
+  consult the [development instructions](DEVELOPMENT.md).
 
-## [Administration](ADMINISTRATION.md)
 
-## [Contributing](CONTRIBUTING.md)
+
+
+
+<hr>
+
+## Features Roadmap
+
+ 1. Create a home directory for each member, as represented by their GW `net_id`.
+ * Create in the home directory of each member a text file with unique content.
+ * Send an email to each member on a recurring basis (over SMTP).
+ * Allow access by each member to his/her home directory (over SSH on port 22).
+ * Allow shared database access for all members (over SSH on port 3306).
+ * Host a static html site (over HTTPS on port 80).
+ * Host a static html site for each member (over HTTPS on port 80).

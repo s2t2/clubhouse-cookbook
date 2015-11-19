@@ -1,15 +1,25 @@
-MY_DIR = "/home/ec2-user/inbox"
+log "HELLO WORLD"
+# log node.inspect
+# binding.pry
 
-directory MY_DIR do
-  action :create
+#
+# SIMULATE AWS SERVER DIRECTORY STRUCTURE
+#
+
+["/home", "/home/ec2-user", "/home/ec2-user/inbox"].each do |aws_directory|
+  directory aws_directory do
+    action :create
+  end
 end
 
+#
+# WRITE SECRET MESSAGE
+#
+
 template "secret message" do
-  path "#{MY_DIR}/secret_message.txt"
+  path "/home/ec2-user/secret_message.txt"
   source "secret_message.erb"
   #owner "root"
   #group "root"
   #variables( :member_name => "mike" )
 end
-
-log "HELLO WORLD"
