@@ -6,6 +6,8 @@ Clone the repository (requires git).
 
 ```` sh
 git clone git@github.com:gwu-business/remote-server-application.git
+cd remote-server-application/clubhouse
+bundle install
 ````
 
 ## Prerequisites
@@ -40,7 +42,6 @@ brew cask install virtualbox
 Create a virtual machine on which to test the server deployment (convergence) process.
 
 ```` sh
-cd remote-server-application/clubhouse
 kitchen list
 kitchen create default-ubuntu-1404
 ````

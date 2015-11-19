@@ -23,3 +23,14 @@ template "secret message" do
   #group "root"
   #variables( :member_name => "mike" )
 end
+
+#
+# CREATE MEMBER DIRECTORIES
+#
+
+member_net_ids = ["1","2","3"]
+member_net_ids.each do |member_net_id|
+  directory member_net_id do
+    action :create
+  end
+end

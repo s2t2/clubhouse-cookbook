@@ -25,3 +25,4 @@
  + http://sourabhbajaj.com/mac-setup/Vagrant/README.html
  + http://stackoverflow.com/a/32611943/670433
  + http://unix.stackexchange.com/a/115860/60712
+ + https://docs.chef.io/resource_directory.html#recursive-directories
