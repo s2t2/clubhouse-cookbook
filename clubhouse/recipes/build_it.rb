@@ -1,6 +1,9 @@
 log "HELLO WORLD"
-# log node.inspect
-# binding.pry
+log node.keys
+
+#breakpoint 'name' do
+#  action :break
+#end
 
 #
 # SIMULATE AWS SERVER DIRECTORY STRUCTURE
@@ -22,4 +25,17 @@ template "secret message" do
   #owner "root"
   #group "root"
   #variables( :member_name => "mike" )
+end
+
+#
+# CREATE MEMBER DIRECTORIES
+#
+
+MEMBERS_DIR = "/home"
+
+node["members"].each do |member|
+  log member
+  directory "#{MEMBERS_DIR}/#{member["net_id"]}" do
+    action :create
+  end
 end

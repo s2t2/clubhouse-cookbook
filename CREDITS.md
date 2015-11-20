@@ -25,3 +25,11 @@
  + http://sourabhbajaj.com/mac-setup/Vagrant/README.html
  + http://stackoverflow.com/a/32611943/670433
  + http://unix.stackexchange.com/a/115860/60712
+ + https://docs.chef.io/resource_directory.html#recursive-directories
+ + http://devopsanywhere.blogspot.com/2012/10/a-year-with-chef.html
+ + http://jtimberman.housepub.org/blog/2015/09/01/quick-tip-alternative-chef-shell-with-pry/
+ + http://www.slideshare.net/werdan/chef-day4
+ + https://docs.chef.io/resource_breakpoint.html
+ + https://docs.chef.io/chef_shell.html#run-as-a-chef-client-title
+ + http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html
+ + https://github.com/alt3/cakebox-builder/blob/master/.kitchen.yml
