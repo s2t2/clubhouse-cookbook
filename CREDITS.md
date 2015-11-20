@@ -36,3 +36,5 @@
  + http://docs.aws.amazon.com/opsworks/latest/userguide/attributes-json-other.html
  + https://github.com/jonpugh/opsworks-up/blob/master/attributes.json.example#L44-L48
  + https://www.reddit.com/r/linux/comments/3t5huj/useradd_invalid_user_id_jeff/
+ + https://github.com/aws/opsworks-cookbooks/issues/298
+ + https://github.com/aws/opsworks-cookbooks/issues/222

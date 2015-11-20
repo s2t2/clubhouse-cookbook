@@ -90,8 +90,18 @@ ssh clubhouse
 Add new JSON entries to [`opsworks.json`](clubhouse/attributes/opsworks.json).
  Entry names must be numeric else opsworks will yield a `useradd` error.
 
+If the user does not have a public key, [instruct the user to generate one](https://github.com/gwu-business/badm-2301/blob/master/assignments/lab/networks-and-protocols.md#generating-a-key-pair).
+
+Adjust file permissions.
+
+```` sh
+chmod 400 gw_id_rsa
+chmod 400 gw_id_rsa.pub
+ssh-add ~/.ssh/gw_id_rsa
+````
+
 Instruct the user to login:
 
 ```` sh
-ssh my_net_id@54.175.4.118
+ssh -i ~/.ssh/gw_id_rsa.pub my_net_id@54.175.4.118
 ````
