@@ -10,42 +10,46 @@
   log "#{k}: #{node[k]}"
 end
 
-
 #breakpoint 'name' do
 #  action :break
 #end
 
-
-###unless node.platform == "amazon"
-###
-###  # SIMULATE AWS SERVER DIRECTORY STRUCTURE
-###
-###  ["/home", "/home/ec2-user", "/home/ec2-user/inbox"].each do |aws_directory|
-###    directory aws_directory do
-###      action :create
-###    end
-###  end
-###
-###  # CREATE MEMBER DIRECTORIES
-###
-###  MEMBERS_DIR = "/home"
-###
-###  node["ssh_users"].each do |member|
-###    log member
-###    directory "#{MEMBERS_DIR}/#{member["name"]}" do
-###      action :create
-###    end
-###  end
-###end
-
 #
-# WRITE SECRET MESSAGE
+# SIMULATE AWS EC2 SERVER ENVIRONMENT DEPLOYED WITH THE OPWSORKS SSH_USER COOKBOOK
 #
 
-#template "secret message" do
-#  path "/home/ec2-user/secret_message.txt"
-#  source "secret_message.erb"
-#  #owner "root"
-#  #group "root"
-#  #variables( :member_name => "mike" )
-#end
+unless node.platform == "amazon"
+  ["/home", "/home/ec2-user"].each do |aws_directory|
+    directory aws_directory do
+      action :create
+    end
+  end
+
+  node["ssh_users"].each do |id, member|
+    directory "/home/#{member["name"]}" do
+      action :create
+    end
+  end
+end
+
+#
+# WRITE SECRET MESSAGES
+#
+
+node["ssh_users"].each do |id, member|
+  directory "/home/#{member["name"]}/inbox" do
+    action :create
+  end
+
+  directory "/home/#{member["name"]}/outbox" #do
+    #action :create
+  #end
+
+  template "secret message" do
+    path "/home/#{member["name"]}/inbox/secret_message.txt"
+    source "secret_message.erb"
+    #owner "root"
+    #group "root"
+    variables({:member_name => member["name"]})
+  end
+end
