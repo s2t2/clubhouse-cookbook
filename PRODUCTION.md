@@ -9,7 +9,11 @@ Log-in to the server:
 ssh -i ~/.ssh/gwu-business-1.pem ec2-user@54.175.53.250
 ````
 
-To deploy or re-deploy, run the "Setup" command from the AWS "Stack" > "Run Command" menu.
+To deploy or re-deploy,
+ run the "Setup" command
+  from the AWS "Stack" > "Run Command" menu.
+  Before deploying, copy and paste the contents of [`opsworks.json`](clubhouse/attributes/opsworks.json)
+   into the "Custom Chef JSON" text box.
 
 If the cookbook changes, run the "Update Custom Cookbooks" command
  before performing the next "Setup" command.
