@@ -33,3 +33,4 @@
  + https://docs.chef.io/chef_shell.html#run-as-a-chef-client-title
  + http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html
  + https://github.com/alt3/cakebox-builder/blob/master/.kitchen.yml
+ + http://docs.aws.amazon.com/opsworks/latest/userguide/attributes-json-other.html

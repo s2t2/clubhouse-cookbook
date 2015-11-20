@@ -74,12 +74,13 @@ atom ~/.ssh/config
 
     # ~/.ssh/config
 
-    Host 54.175.53.250
+    Host clubhouse
     IdentityFile ~/.ssh/gwu-business-1.pem
     User ec2-user
+    Hostname 54.175.53.250
 
 This configuration allows server access via a more concise command:
 
 ```` sh
-ssh 54.175.53.250
+ssh clubhouse
 ````
