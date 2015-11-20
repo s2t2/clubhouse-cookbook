@@ -57,9 +57,3 @@ Run tests to simulate server configuration and administration tasks.
 ```` sh
 kitchen converge default-ubuntu-1404
 ````
-
-Optionally inspect the virtual machine over SSH using Vagrant Manager, or:
-
-```` sh
-kitchen login default-ubuntu-1404
-````

@@ -1,3 +1,17 @@
+<%
+  # source: https://github.com/alt3/cakebox-builder/blob/f4a275ef7b258452d2c1e58e96d90cec0d7cf756/.kitchen.yml
+  # Use the runlist, attributes and other settings defined in node.json to
+  # ensure .kitchen.yml runs against the exact same configuration as Vagrantfile.
+  require 'json'
+  node_dot_json = 'attributes/node.json'
+  if !File.exist?(node_dot_json)
+    puts 'Aborting .kitchen.yml: required node.json does not exist' unless File.exist?(node_dot_json)
+    exit
+  else
+    node = JSON.parse(File.read(node_dot_json))
+  end
+%>
+
 ---
 driver:
   name: vagrant
@@ -11,6 +25,5 @@ platforms:
 
 suites:
   - name: default
-    run_list:
-      - recipe[clubhouse::build_it]
-    attributes: { foo: "bar" }
+    run_list: <%= node["run_list"] %>
+    attributes: <%= node["attributes"].to_json %>
