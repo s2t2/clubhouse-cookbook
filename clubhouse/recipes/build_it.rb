@@ -1,5 +1,7 @@
-log "HELLO WORLD"
 log node.keys
+node.each do |k,v|
+  log "#{k}: #{v}"
+end
 
 #breakpoint 'name' do
 #  action :break
@@ -9,6 +11,7 @@ log node.keys
 # SIMULATE AWS SERVER DIRECTORY STRUCTURE
 #
 
+# unless node.platform == "ubuntu" ...
 ["/home", "/home/ec2-user", "/home/ec2-user/inbox"].each do |aws_directory|
   directory aws_directory do
     action :create

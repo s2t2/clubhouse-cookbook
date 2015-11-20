@@ -3,12 +3,12 @@
   # Use the runlist, attributes and other settings defined in node.json to
   # ensure .kitchen.yml runs against the exact same configuration as Vagrantfile.
   require 'json'
-  node_dot_json = 'attributes/node.json'
-  if !File.exist?(node_dot_json)
-    puts 'Aborting .kitchen.yml: required node.json does not exist' unless File.exist?(node_dot_json)
-    exit
+  attributes_dot_json = 'attributes/opsworks.json'
+  if File.exist?(attributes_dot_json)
+    attributes = JSON.parse(File.read(attributes_dot_json))
   else
-    node = JSON.parse(File.read(node_dot_json))
+    puts "Aborting .kitchen.yml: please create a file called #{attributes_dot_json}"
+    exit
   end
 %>
 
@@ -25,5 +25,6 @@ platforms:
 
 suites:
   - name: default
-    run_list: <%= node["run_list"] %>
-    attributes: <%= node["attributes"].to_json %>
+    run_list:
+      - recipe[clubhouse::build_it]
+    attributes: <%= attributes.to_json %>
