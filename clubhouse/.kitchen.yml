@@ -14,7 +14,12 @@
 
 ---
 driver:
-  name: vagrant
+  name: ec2 # instead of vagrant driver; ec2 driver requires kitchen-ec2 gem
+  aws_ssh_key_id: gwu-business-1
+  ssh_key: ~/.ssh/gwu-business-1.pem
+  region: us-east-1
+  availability_zone: us-east-1a
+  #require_chef_omnibus: true
 
 provisioner:
   name: chef_solo
@@ -22,6 +27,10 @@ provisioner:
 platforms:
   - name: ubuntu-14.04
   - name: centos-7.1
+  - name: amazon
+    driver:
+      image_id: ami-12345678
+      username: ec2-user
 
 suites:
   - name: default

@@ -38,3 +38,9 @@
  + https://www.reddit.com/r/linux/comments/3t5huj/useradd_invalid_user_id_jeff/
  + https://github.com/aws/opsworks-cookbooks/issues/298
  + https://github.com/aws/opsworks-cookbooks/issues/222
+ + http://blog.celingest.com/en/2014/03/04/introduction-opsworks-tips-tricks/
+ + http://www.slideshare.net/jweiss/docker-on-aws-opsworks
+ + http://www.iheavy.com/2014/01/16/how-to-deploy-on-amazon-ec2-with-vagrant/
+ + http://audiodog.en.1.3142.xyz/how-to-setup-an-ec2-instance-and-similar-local-development-virtual-machine-with-virtualbox-vagrant-and-chef/
+ + http://docs.aws.amazon.com/opsworks/latest/userguide/cookbooks-101-basics-ec2.html
+ + https://github.com/test-kitchen/kitchen-ec2/blob/master/data/amis.json

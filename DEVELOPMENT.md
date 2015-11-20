@@ -37,6 +37,50 @@ Download [Virtual Box](https://www.virtualbox.org/), or use Homebrew to install 
 brew cask install virtualbox
 ````
 
+
+
+
+
+Install the kitchen-ec2 gem, to use instead of vagrant
+ for simulating a local virtual ec2 server environment.
+
+```` sh
+bundle install
+````
+
+
+
+
+
+
+
+
+
+
+
+OR
+
+Install the vagrant-aws plugin for Vagrant, for simulating a local virtual ec2 server environment.
+
+```` sh
+vagrant plugin install vagrant-aws
+````
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Testing
 
 Create a virtual machine on which to test the server deployment (convergence) process.
