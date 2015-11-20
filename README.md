@@ -8,6 +8,8 @@ When using an [Elastic Cloud Compute (EC2)](https://aws.amazon.com/ec2/)
 use this custom [Chef](https://www.chef.io/chef/) "cookbook" to
  automate server configuration and administration tasks.
 
+The production server name, "Clubhouse", is an instructional analogy.
+
 ## Usage
 
 To administer the production AWS EC2 server,
