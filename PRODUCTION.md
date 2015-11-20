@@ -84,3 +84,14 @@ This configuration allows server access via a more concise command:
 ```` sh
 ssh clubhouse
 ````
+
+## Adding SSH Users
+
+Add new JSON entries to [`opsworks.json`](clubhouse/attributes/opsworks.json).
+ Entry names must be numeric else opsworks will yield a `useradd` error.
+
+Instruct the user to login:
+
+```` sh
+ssh my_net_id@54.175.4.118
+````

@@ -34,3 +34,5 @@
  + http://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-json.html
  + https://github.com/alt3/cakebox-builder/blob/master/.kitchen.yml
  + http://docs.aws.amazon.com/opsworks/latest/userguide/attributes-json-other.html
+ + https://github.com/jonpugh/opsworks-up/blob/master/attributes.json.example#L44-L48
+ + https://www.reddit.com/r/linux/comments/3t5huj/useradd_invalid_user_id_jeff/
