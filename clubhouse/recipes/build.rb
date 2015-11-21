@@ -37,32 +37,21 @@ node["ssh_users"].each do |id, member|
   directory "/home/#{member["name"]}/inbox"
   directory "/home/#{member["name"]}/outbox"
 
-  template "secret message" do
+  template "secret message for #{member["name"]}" do
     path "/home/#{member["name"]}/inbox/secret_message.txt"
     source "secret_message.erb"
     variables({:member_name => member["name"]})
   end
+
+  bash "mysql setup for #{member["name"]}" do
+    user 'ec2-user'
+    code <<-EOH
+      mysql -e "DROP DATABASE IF EXISTS #{member["name"]};"
+      mysql -e "CREATE DATABASE #{member["name"]};"
+      mysql -e "GRANT ALL ON `#{member["name"]}`.* TO '#{member["name"]}'@'localhost';"
+    EOH
+  end
 end
-
-#
-# REMOVE ERRONEOUS MYSQL USERS
-#
-
-bash 'lock-down mysql' do
-  user 'ec2-user'
-  code <<-EOH
-    mysql -uroot --password=#{node["mysql"]["server_root_password"]} -e "DELETE FROM mysql.user WHERE HOST <> "localhost" OR USER = "";"
-  EOH
-end
-
-#
-# ADD MYSQL USERS
-#
-
-
-
-
-
 
 #todo: how to debug interactive node convergences like binding.pry?
 #breakpoint 'name' do
