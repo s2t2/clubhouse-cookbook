@@ -1,12 +1,16 @@
 # Administration
 
 Obtain the private key associated with the production server (e.g. "gwu-business-1.pem").
- Note the server's Public IP address (e.g. 54.175.53.250).
+ Note the server's Public IP address (e.g. 54.88.47.221).
 
 Log-in to the server:
 
 ```` sh
-ssh -i ~/.ssh/gwu-business-1.pem ec2-user@54.175.53.250
+# as an instructor:
+ssh -i ~/.ssh/gwu-business-1.pem ec2-user@54.88.47.221
+
+# as a student:
+ssh -i ~/.ssh/gw_id_rsa.pub sammy_student@54.88.47.221
 ````
 
 To deploy or re-deploy,
@@ -43,11 +47,11 @@ Navigate to the "OpsWorks" service.
 
 Create a new stack in the "N. Virginia" region using the "Amazon Linux" OS,
  and use the advanced options to "use custom chef cookbooks",
- and specify the cookbook url, "https://github.com/gwu-business/clubhouse".
+ and specify the url of this hosted repository as the cookbook url.
 
 Add a new "Custom" layer
  and specify the recipe(s) to run
- during the "Deploy" lifecycle event: `clubhouse::build_it`.
+ during the "Setup" lifecycle event: `clubhouse::build`.
 
 Add a new server instance to the stack.
  Choose "m4.large" size,
@@ -69,15 +73,14 @@ Optionally use a text editor to add an entry to the SSH configuration file
  to specify the credentials to use when logging in to the server.
 
 ```` sh
-atom ~/.ssh/config
+# ~/.ssh/config
+
+# GWSB BADM 2301 SERVER CONFIG
+Host clubhouse
+  IdentityFile ~/.ssh/gwu-business-1.pem
+  User ec2-user
+  Hostname 54.175.53.250
 ````
-
-    # ~/.ssh/config
-
-    Host clubhouse
-    IdentityFile ~/.ssh/gwu-business-1.pem
-    User ec2-user
-    Hostname 54.175.53.250
 
 This configuration allows server access via a more concise command:
 
@@ -87,21 +90,6 @@ ssh clubhouse
 
 ## Adding SSH Users
 
-Add new JSON entries to [`opsworks.json`](clubhouse/attributes/opsworks.json).
- Entry names must be numeric else opsworks will yield a `useradd` error.
-
-If the user does not have a public key, [instruct the user to generate one](https://github.com/gwu-business/badm-2301/blob/master/assignments/lab/networks-and-protocols.md#generating-a-key-pair).
-
-Adjust file permissions.
-
-```` sh
-chmod 400 gw_id_rsa
-chmod 400 gw_id_rsa.pub
-ssh-add ~/.ssh/gw_id_rsa
-````
-
-Instruct the user to login:
-
-```` sh
-ssh -i ~/.ssh/gw_id_rsa.pub my_net_id@54.175.4.118
-````
+Obtain the user's public key
+ and add a corresponding entry
+  to the "ssh_users" node attribute.

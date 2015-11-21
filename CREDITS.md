@@ -38,3 +38,6 @@
  + https://www.reddit.com/r/linux/comments/3t5huj/useradd_invalid_user_id_jeff/
  + https://github.com/aws/opsworks-cookbooks/issues/298
  + https://github.com/aws/opsworks-cookbooks/issues/222
+ + http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws
+ + http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html
+ + http://docs.aws.amazon.com/opsworks/latest/userguide/security-ssh-access.html
