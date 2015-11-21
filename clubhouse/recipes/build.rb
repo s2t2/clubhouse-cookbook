@@ -48,7 +48,7 @@ node["ssh_users"].each do |id, member|
     code <<-EOH
       mysql -e "DROP DATABASE IF EXISTS #{member["name"]};"
       mysql -e "CREATE DATABASE #{member["name"]};"
-      mysql -e "GRANT ALL ON `#{member["name"]}`.* TO '#{member["name"]}'@'localhost';"
+      mysql -e "GRANT ALL ON #{member["name"]}.* TO '#{member["name"]}'@'localhost';"
     EOH
   end
 end
