@@ -1,3 +1,7 @@
+#
+# LOG NODE ATTRIBUTES
+#
+
 [
   "hostname", "fqdn", "domain", "ipaddress", "macaddress", "ip6address",
   "platform", "platform_version", "platform_family",
@@ -5,14 +9,11 @@
   "uptime_seconds","uptime","idletime_seconds","idletime",
   "current_user","ssh_users","sudoers",
   "cloud","deploy","test_suite",
-  "packages","recipes","roles","chef_environment","chef_packages","opsworks_custom_cookbooks",
+  "packages","recipes","roles","chef_environment","chef_packages","opsworks_custom_cookbooks"
 ].each do |k|
   log "#{k}: #{node[k]}"
 end
 
-#breakpoint 'name' do
-#  action :break
-#end
 
 #
 # SIMULATE AWS EC2 SERVER ENVIRONMENT DEPLOYED WITH THE OPWSORKS SSH_USER COOKBOOK
@@ -20,15 +21,11 @@ end
 
 unless node.platform == "amazon"
   ["/home", "/home/ec2-user"].each do |aws_directory|
-    directory aws_directory do
-      action :create
-    end
+    directory aws_directory
   end
 
   node["ssh_users"].each do |id, member|
-    directory "/home/#{member["name"]}" do
-      action :create
-    end
+    directory "/home/#{member["name"]}"
   end
 end
 
@@ -37,19 +34,37 @@ end
 #
 
 node["ssh_users"].each do |id, member|
-  directory "/home/#{member["name"]}/inbox" do
-    action :create
-  end
-
-  directory "/home/#{member["name"]}/outbox" #do
-    #action :create
-  #end
+  directory "/home/#{member["name"]}/inbox"
+  directory "/home/#{member["name"]}/outbox"
 
   template "secret message" do
     path "/home/#{member["name"]}/inbox/secret_message.txt"
     source "secret_message.erb"
-    #owner "root"
-    #group "root"
     variables({:member_name => member["name"]})
   end
 end
+
+#
+# REMOVE ERRONEOUS MYSQL USERS
+#
+
+bash 'lock-down mysql' do
+  user 'ec2-user'
+  code <<-EOH
+    mysql -uroot --password=#{node["mysql"]["server_root_password"]} -e "DELETE FROM mysql.user WHERE HOST <> "localhost" OR USER = "";"
+  EOH
+end
+
+#
+# ADD MYSQL USERS
+#
+
+
+
+
+
+
+#todo: how to debug interactive node convergences like binding.pry?
+#breakpoint 'name' do
+#  action :break
+#end
