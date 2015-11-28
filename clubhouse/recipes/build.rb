@@ -34,8 +34,15 @@ end
 #
 
 node["ssh_users"].each do |id, member|
-  directory "/home/#{member["name"]}/inbox"
-  directory "/home/#{member["name"]}/outbox"
+  ["inbox","outbox"].each do |dir_name|
+    directory "/home/#{member["name"]}/#{dir_name}" do
+      owner member["name"] if node.platform == "amazon" # temporary workaround; todo: create users on non-amazon platforms
+      group member["name"] if node.platform == "amazon" # temporary workaround; todo: create users on non-amazon platforms
+      #mode '0755'
+      #recursive true
+      action :create
+    end
+  end
 
   template "secret message for #{member["name"]}" do
     path "/home/#{member["name"]}/inbox/secret_message.txt"
@@ -44,7 +51,7 @@ node["ssh_users"].each do |id, member|
   end
 
   bash "mysql setup for #{member["name"]}" do
-    user 'ec2-user'
+    user node.platform == "amazon" ? 'ec2-user' : "vagrant" # temporary workaround; todo: create users on non-amazon platforms
     code <<-EOH
       mysql -e "DROP DATABASE IF EXISTS #{member["name"]};"
       mysql -e "CREATE DATABASE #{member["name"]};"
