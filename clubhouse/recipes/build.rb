@@ -9,15 +9,11 @@
   "uptime_seconds","uptime","idletime_seconds","idletime",
   "current_user","ssh_users","sudoers",
   "cloud","deploy","test_suite",
-  "packages","recipes","roles","chef_environment","chef_packages","opsworks_custom_cookbooks"
+  "packages","recipes","roles","chef_environment","chef_packages","opsworks_custom_cookbooks",
+  "mysql"
 ].each do |k|
   log "#{k}: #{node[k]}"
 end
-
-
-#
-# SIMULATE AWS EC2 SERVER ENVIRONMENT DEPLOYED WITH THE OPWSORKS SSH_USER COOKBOOK
-#
 
 unless node.platform == "amazon"
   ["/home", "/home/ec2-user"].each do |aws_directory|
@@ -28,10 +24,6 @@ unless node.platform == "amazon"
     directory "/home/#{member["name"]}"
   end
 end
-
-#
-# WRITE SECRET MESSAGES
-#
 
 node["ssh_users"].each do |id, member|
   ["inbox","outbox"].each do |dir_name|
@@ -50,12 +42,19 @@ node["ssh_users"].each do |id, member|
     variables({:member_name => member["name"]})
   end
 
+  template "include root password in mysql configuration file for passwordless logs" do
+    path "/etc/my.cnf"
+    source "my.cnf.erb"
+    owner "root"
+    group "root"
+  end
+
   bash "mysql setup for #{member["name"]}" do
     user node.platform == "amazon" ? 'ec2-user' : "vagrant" # temporary workaround; todo: create users on non-amazon platforms
     code <<-EOH
-      mysql -e "DROP DATABASE IF EXISTS #{member["name"]};"
-      mysql -e "CREATE DATABASE #{member["name"]};"
-      mysql -e "GRANT ALL ON #{member["name"]}.* TO '#{member["name"]}'@'localhost';"
+      mysql -uroot -e "DROP DATABASE IF EXISTS #{member["name"]};"
+      mysql -uroot -e "CREATE DATABASE #{member["name"]};"
+      mysql -uroot -e "GRANT ALL ON #{member["name"]}.* TO '#{member["name"]}'@'localhost';"
     EOH
   end
 end
