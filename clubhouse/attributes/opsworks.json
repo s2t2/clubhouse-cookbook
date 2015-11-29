@@ -4,13 +4,22 @@
       "name":"rossetti",
       "email":"rossetti@gwu.edu",
       "sudoer":true,
-      "public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD6jzp9uMDT9aL2mp3I3OXLE9PIuixwJstBAwFrljHxZsjbatXW7gbxXWXugJdZcl3qksZM+C+PtsKaaxcDzlNmHo3DWCleA1wMiWzgT+aqW8cz/WHk2X/xSYZbnBhDlY+ikdJzN9/AhKT+wc961X5IUSP6dgMKj6Tkktxr6UqRArGPpn+vZv5aaelqeiwLTjN3g4qni72ZemY3QZH5yj7N8NEPT4+tQZgCEcots4yQaA9BrvNZD9VIiXY1z7LQTZ+YqWuD6bkUn3+CZ0P/TPJpEcdjpzOTgQBbTiL2uzesBIOt+93ZmprEw4hafK8VvdJouoXEdNn8Dzj1Q/CmIlT5Y13Qd4QH3KTaTEAqqpW0jVamp0nnCB9rSDkV03UOm+HO9CCb8vnPuNuLOtXlZe7aRZUbCUG/xFQq3CxXsHYEm+NfmX4Exo2QyFWbG8AmzwuNMiDmjkkWYe06mJdWs7aws3zrelrfHvsnf5SLrap4bqQZ5HTjnGCkFcQQSks2EFfMDPJ12409TDQuvFe2QmREucHoJIerDtVpR9UYl8r2T7D85bJtshPC5OzGCFRc3D2Gdrl1tsAj1yPWxFiEK1WC9Bs3BfT/Vl2oZg3JnluoYmzMTgR/II0UceE15v64bEIBIJIdL2yjG998+XPiEqRfpAXqhVIKNdP6UD94E5WhGw== rossetti@gwu.edu"
+      "public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD6jzp9uMDT9aL2mp3I3OXLE9PIuixwJstBAwFrljHxZsjbatXW7gbxXWXugJdZcl3qksZM+C+PtsKaaxcDzlNmHo3DWCleA1wMiWzgT+aqW8cz/WHk2X/xSYZbnBhDlY+ikdJzN9/AhKT+wc961X5IUSP6dgMKj6Tkktxr6UqRArGPpn+vZv5aaelqeiwLTjN3g4qni72ZemY3QZH5yj7N8NEPT4+tQZgCEcots4yQaA9BrvNZD9VIiXY1z7LQTZ+YqWuD6bkUn3+CZ0P/TPJpEcdjpzOTgQBbTiL2uzesBIOt+93ZmprEw4hafK8VvdJouoXEdNn8Dzj1Q/CmIlT5Y13Qd4QH3KTaTEAqqpW0jVamp0nnCB9rSDkV03UOm+HO9CCb8vnPuNuLOtXlZe7aRZUbCUG/xFQq3CxXsHYEm+NfmX4Exo2QyFWbG8AmzwuNMiDmjkkWYe06mJdWs7aws3zrelrfHvsnf5SLrap4bqQZ5HTjnGCkFcQQSks2EFfMDPJ12409TDQuvFe2QmREucHoJIerDtVpR9UYl8r2T7D85bJtshPC5OzGCFRc3D2Gdrl1tsAj1yPWxFiEK1WC9Bs3BfT/Vl2oZg3JnluoYmzMTgR/II0UceE15v64bEIBIJIdL2yjG998+XPiEqRfpAXqhVIKNdP6UD94E5WhGw== rossetti@gwu.edu",
+      "mysql_password":"CHANGE_ME"
     },
     "1001": {
       "name":"sammy_student",
       "email":"sammy_student@gwu.edu",
       "sudoer":false,
-      "public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD6jzp9uMDT9aL2mp3I3OXLE9PIuixwJstBAwFrljHxZsjbatXW7gbxXWXugJdZcl3qksZM+C+PtsKaaxcDzlNmHo3DWCleA1wMiWzgT+aqW8cz/WHk2X/xSYZbnBhDlY+ikdJzN9/AhKT+wc961X5IUSP6dgMKj6Tkktxr6UqRArGPpn+vZv5aaelqeiwLTjN3g4qni72ZemY3QZH5yj7N8NEPT4+tQZgCEcots4yQaA9BrvNZD9VIiXY1z7LQTZ+YqWuD6bkUn3+CZ0P/TPJpEcdjpzOTgQBbTiL2uzesBIOt+93ZmprEw4hafK8VvdJouoXEdNn8Dzj1Q/CmIlT5Y13Qd4QH3KTaTEAqqpW0jVamp0nnCB9rSDkV03UOm+HO9CCb8vnPuNuLOtXlZe7aRZUbCUG/xFQq3CxXsHYEm+NfmX4Exo2QyFWbG8AmzwuNMiDmjkkWYe06mJdWs7aws3zrelrfHvsnf5SLrap4bqQZ5HTjnGCkFcQQSks2EFfMDPJ12409TDQuvFe2QmREucHoJIerDtVpR9UYl8r2T7D85bJtshPC5OzGCFRc3D2Gdrl1tsAj1yPWxFiEK1WC9Bs3BfT/Vl2oZg3JnluoYmzMTgR/II0UceE15v64bEIBIJIdL2yjG998+XPiEqRfpAXqhVIKNdP6UD94E5WhGw== rossetti@gwu.edu"
+      "public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQD6jzp9uMDT9aL2mp3I3OXLE9PIuixwJstBAwFrljHxZsjbatXW7gbxXWXugJdZcl3qksZM+C+PtsKaaxcDzlNmHo3DWCleA1wMiWzgT+aqW8cz/WHk2X/xSYZbnBhDlY+ikdJzN9/AhKT+wc961X5IUSP6dgMKj6Tkktxr6UqRArGPpn+vZv5aaelqeiwLTjN3g4qni72ZemY3QZH5yj7N8NEPT4+tQZgCEcots4yQaA9BrvNZD9VIiXY1z7LQTZ+YqWuD6bkUn3+CZ0P/TPJpEcdjpzOTgQBbTiL2uzesBIOt+93ZmprEw4hafK8VvdJouoXEdNn8Dzj1Q/CmIlT5Y13Qd4QH3KTaTEAqqpW0jVamp0nnCB9rSDkV03UOm+HO9CCb8vnPuNuLOtXlZe7aRZUbCUG/xFQq3CxXsHYEm+NfmX4Exo2QyFWbG8AmzwuNMiDmjkkWYe06mJdWs7aws3zrelrfHvsnf5SLrap4bqQZ5HTjnGCkFcQQSks2EFfMDPJ12409TDQuvFe2QmREucHoJIerDtVpR9UYl8r2T7D85bJtshPC5OzGCFRc3D2Gdrl1tsAj1yPWxFiEK1WC9Bs3BfT/Vl2oZg3JnluoYmzMTgR/II0UceE15v64bEIBIJIdL2yjG998+XPiEqRfpAXqhVIKNdP6UD94E5WhGw== rossetti@gwu.edu",
+      "mysql_password":"CHANGE_ME"
+    },
+    "1002": {
+      "name":"windows_student",
+      "email":"windows_student@gwu.edu",
+      "sudoer":false,
+      "public_key":"ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAsCJAXA4rzHV5adUlUyeliwigKSw+aiEGVoVKzOtktdy3BBvIIteu5sEzSP8S2K/zTobcGxxQDjIeuQIKbUeuhveF9HJne5tx2J8VpAOpKsJxQLFOtFVy+Dk7cUy2Tm0J3R0D9WQOijwEXTojxfLKLc4LvlXGoV5KjTxGP03ZQSKOzo9/l5yet96jP6Jb7KV+s5fXv2HcwafzWviUssHg73hydyepGkLgtrA9eQVJVN1b2hhN1UfUvbygl+Q8DikLSHY7LkCizhHVtyJxHPNlk+1VEjTCWN+8Zh0g+e3DkgfPQNLb3boXWe1/UPP6w/bSoVb4TQMQ8KzzP3KDt4Ad3Q== rsa-key-20151128",
+      "mysql_password":"CHANGE_ME"
     }
   }
 }

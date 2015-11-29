@@ -1,16 +1,16 @@
 # Administration
 
 Obtain the private key associated with the production server (e.g. "gwu-business-1.pem").
- Note the server's Public IP address (e.g. 54.88.47.221).
+ Note the server's Public IP address (e.g. 54.173.219.67).
 
 Log-in to the server:
 
 ```` sh
 # as an instructor:
-ssh -i ~/.ssh/gwu-business-1.pem ec2-user@54.88.47.221
+ssh ec2-user@54.173.219.67 -i ~/.ssh/gwu-business-1.pem
 
 # as a student:
-ssh -i ~/.ssh/gw_id_rsa.pub sammy_student@54.88.47.221
+ssh sammy_student@54.173.219.67 -i ~/.ssh/gw_id_rsa.pub
 ````
 
 To deploy or re-deploy,
@@ -22,7 +22,16 @@ To deploy or re-deploy,
 If the cookbook changes, run the "Update Custom Cookbooks" command
  before performing the next "Setup" command.
 
-## Prerequisites
+
+
+
+
+
+
+
+
+
+## AWS Prerequisites
 
 Create an AWS account, log-in to the AWS console, and ensure presence of a running server.
 
@@ -49,7 +58,7 @@ Create a new stack in the "N. Virginia" region using the "Amazon Linux" OS,
  and use the advanced options to "use custom chef cookbooks",
  and specify the url of this hosted repository as the cookbook url.
 
-Add a new "Custom" layer
+Add a new "MySQL" layer
  and specify the recipe(s) to run
  during the "Setup" lifecycle event: `clubhouse::build`.
 

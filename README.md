@@ -8,11 +8,9 @@ When using an [Elastic Cloud Compute (EC2)](https://aws.amazon.com/ec2/)
 use this custom [Chef](https://www.chef.io/chef/) "cookbook" to
  automate server configuration and administration tasks.
 
-The production server name, "Clubhouse", is an instructional analogy.
-
 ## Usage
 
-To administer the production AWS EC2 server,
+To administer the production AWS EC2 server, "Clubhouse",
  follow the [production instructions](PRODUCTION.md).
 
 ## Contributing
@@ -29,6 +27,7 @@ This cookbook performs or enables the following server administration and config
   - [ ] Send an email to each member on a recurring basis (over SMTP).
   - [x] Allow access by each member to his/her home directory (over SSH on port 22).
   - [ ] Allow shared database access for all members (over SSH on port 3306).
+  - [ ] Allow personal database access for all members (over SSH on port 3306).
   - [ ] Host a static html site (over HTTPS on port 80).
   - [ ] Host a static html site for each member (over HTTPS on port 80).
 
