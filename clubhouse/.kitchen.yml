@@ -7,11 +7,11 @@
   attributes_dot_json = 'attributes/opsworks.json'
   if File.exist?(attributes_dot_json)
     attributes = JSON.parse(File.read(attributes_dot_json))
-    #attributes.merge!({
-    #  "mysql" => {
-    #    "server_root_password" => ENV["MYSQL_ROOT_PASSWORD"]
-    #  }
-    #})
+    attributes.merge!({
+      "mysql" => {
+        "server_root_password" => ENV["MYSQL_ROOT_PASSWORD"]
+      }
+    })
   else
     puts "Aborting .kitchen.yml: please create a file called #{attributes_dot_json}"
     exit

@@ -26,8 +26,8 @@ This cookbook performs or enables the following server administration and config
   - [x] Create in the home directory of each member a text file with unique content.
   - [ ] Send an email to each member on a recurring basis (over SMTP).
   - [x] Allow access by each member to his/her home directory (over SSH on port 22).
-  - [ ] Allow shared database access for all members (over SSH on port 3306).
-  - [ ] Allow personal database access for all members (over SSH on port 3306).
+  - [x] Allow shared database access for all members (over SSH on port 3306).
+  - [x] Allow personal database access for all members (over SSH on port 3306).
   - [ ] Host a static html site (over HTTPS on port 80).
   - [ ] Host a static html site for each member (over HTTPS on port 80).
 
