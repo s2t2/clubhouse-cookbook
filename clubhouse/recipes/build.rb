@@ -39,7 +39,11 @@ node["ssh_users"].each do |id, member|
   template "secret message for #{member["name"]}" do
     path "/home/#{member["name"]}/inbox/secret_message.txt"
     source "secret_message.erb"
-    variables({:member_name => member["name"]})
+    variables({
+      :member_name => member["name"],
+      :passcode => "4d782a10037fbcd8cee463865cf54497", #todo: require 'digest' Digest::MD5.hexdigest("my phrase" + "1234")
+      :passphrase => "#RaiseHigh the Buff and Blue"
+    })
   end
 
   template "include root password in mysql configuration file for passwordless logs" do
@@ -54,7 +58,7 @@ node["ssh_users"].each do |id, member|
     code <<-EOH
       mysql -uroot -e "DROP DATABASE IF EXISTS #{member["name"]};"
       mysql -uroot -e "CREATE DATABASE #{member["name"]};"
-      mysql -uroot -e "GRANT ALL ON #{member["name"]}.* TO '#{member["name"]}'@'localhost';"
+      mysql -uroot -e "GRANT ALL ON #{member["name"]}.* TO '#{member["name"]}'@'127.0.0.1' IDENTIFIED BY '#{member["mysql_password"]}';"
     EOH
   end
 end
