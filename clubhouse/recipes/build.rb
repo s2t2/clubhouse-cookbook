@@ -50,14 +50,14 @@ node["ssh_users"].each do |id, member|
     variables({:member_name => member["name"]})
   end
 
-  #bash "mysql setup for #{member["name"]}" do
-  #  user node.platform == "amazon" ? 'ec2-user' : "vagrant" # temporary workaround; todo: create users on non-amazon platforms
-  #  code <<-EOH
-  #    mysql -e "DROP DATABASE IF EXISTS #{member["name"]};"
-  #    mysql -e "CREATE DATABASE #{member["name"]};"
-  #    mysql -e "GRANT ALL ON #{member["name"]}.* TO '#{member["name"]}'@'localhost';"
-  #  EOH
-  #end
+  bash "mysql setup for #{member["name"]}" do
+    user node.platform == "amazon" ? 'ec2-user' : "vagrant" # temporary workaround; todo: create users on non-amazon platforms
+    code <<-EOH
+      mysql -e "DROP DATABASE IF EXISTS #{member["name"]};"
+      mysql -e "CREATE DATABASE #{member["name"]};"
+      mysql -e "GRANT ALL ON #{member["name"]}.* TO '#{member["name"]}'@'localhost';"
+    EOH
+  end
 end
 
 #todo: how to debug interactive node convergences like binding.pry?
