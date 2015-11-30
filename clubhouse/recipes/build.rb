@@ -2,7 +2,14 @@
 # LOG NODE ATTRIBUTES
 #
 
+=begin
+# TO GENERATE PASSCODES:
 require 'digest'
+40.times do
+  puts Digest::MD5.hexdigest("my phrase" + DateTime.now.to_s)
+  sleep 1
+end
+=end
 
 [
   "hostname", "fqdn", "domain", "ipaddress", "macaddress", "ip6address",
@@ -75,7 +82,7 @@ node["ssh_users"].each do |id, member|
     source "secret_message.erb"
     variables({
       :member_name => member["name"],
-      :passcode => Digest::MD5.hexdigest("my phrase" + DateTime.now.to_s),
+      :passcode => member["passcode"], # Digest::MD5.hexdigest("my phrase" + DateTime.now.to_s),
       :passphrase => "Raise High the Buff and Blue"
     })
   end
