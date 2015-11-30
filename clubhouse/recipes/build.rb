@@ -87,18 +87,18 @@ node["ssh_users"].each do |id, member|
     })
   end
 
-  if node.platform == "amazon" # todo: install mysql on non-amazon platforms
-    bash "mysql setup for #{member["name"]}" do
-      user 'ec2-user'
-      code <<-EOH
-        mysql -uroot -e "DROP DATABASE IF EXISTS #{member["name"]};"
-        mysql -uroot -e "CREATE DATABASE #{member["name"]};"
-        mysql -uroot -e "CREATE USER '#{member["name"]}'@'127.0.0.1' IDENTIFIED BY '#{member["mysql_password"]}';"
-        mysql -uroot -e "GRANT ALL ON #{member["name"]}.* TO '#{member["name"]}'@'127.0.0.1';"
-        mysql -uroot -e "GRANT SELECT ON members.* TO '#{member["name"]}'@'127.0.0.1;"
-      EOH
-    end
-  end
+  #if node.platform == "amazon" # todo: install mysql on non-amazon platforms
+  #  bash "mysql setup for #{member["name"]}" do
+  #    user 'ec2-user'
+  #    code <<-EOH
+  #      mysql -uroot -e "DROP DATABASE IF EXISTS #{member["name"]};"
+  #      mysql -uroot -e "CREATE DATABASE #{member["name"]};"
+  #      mysql -uroot -e "CREATE USER '#{member["name"]}'@'127.0.0.1' IDENTIFIED BY '#{member["mysql_password"]}';"
+  #      mysql -uroot -e "GRANT ALL ON #{member["name"]}.* TO '#{member["name"]}'@'127.0.0.1';"
+  #      mysql -uroot -e "GRANT SELECT ON members.* TO '#{member["name"]}'@'127.0.0.1;"
+  #    EOH
+  #  end
+  #end
 end
 
 #todo: how to debug interactive node convergences like binding.pry?
