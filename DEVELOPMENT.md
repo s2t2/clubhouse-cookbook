@@ -5,8 +5,8 @@
 Clone the repository (requires git).
 
 ```` sh
-git clone git@github.com:gwu-business/remote-server-application.git
-cd remote-server-application/clubhouse
+git clone git@github.com:gwu-business/remote-server-opsworks-cookbook.git
+cd remote-server-opsworks-cookbook/clubhouse
 bundle install
 ````
 
