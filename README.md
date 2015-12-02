@@ -1,4 +1,4 @@
-# Clubhouse Cookbook
+# Remote Server - AWS Opsworks Custom Cookbook
 
 When using an [Elastic Cloud Compute (EC2)](https://aws.amazon.com/ec2/)
     instance hosted by [Amazon Web Services](https://aws.amazon.com/)
